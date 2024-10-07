@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Determinant Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin-top: 50px;
+        }
+        h1 {
+            color: #333;
+        }
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        td {
+            padding: 10px;
+        }
+        input {
+            width: 50px;
+            padding: 5px;
+            text-align: center;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>2x2 Determinant Calculator</h1>
+    <form id="determinant-form">
+        <table>
+            <tr>
+                <td><input type="number" id="a11" value="0"></td>
+                <td><input type="number" id="a12" value="0"></td>
+            </tr>
+            <tr>
+                <td><input type="number" id="a21" value="0"></td>
+                <td><input type="number" id="a22" value="0"></td>
+            </tr>
+        </table>
+        <button type="button" onclick="calculateDeterminant()">Calculate Determinant</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        function calculateDeterminant() {
+            // Get values from the input fields
+            var a11 = parseFloat(document.getElementById("a11").value);
+            var a12 = parseFloat(document.getElementById("a12").value);
+            var a21 = parseFloat(document.getElementById("a21").value);
+            var a22 = parseFloat(document.getElementById("a22").value);
+
+            // Calculate the determinant for a 2x2 matrix
+            var determinant = (a11 * a22) - (a12 * a21);
+
+            // Display the result
+            document.getElementById("result").innerHTML = "Determinant: " + determinant;
+        }
+    </script>
+</body>
+</html>
+
